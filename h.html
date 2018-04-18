@@ -1,0 +1,26 @@
+<html>
+<body style="background-color:grey">
+<center>
+<div id="demo">
+<h1>Today is special day</h1>
+<button type="button" onclick="loadDoc()">Why's that?</button>
+</div>
+
+<script>
+function loadDoc() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("demo").innerHTML =
+      this.responseText;
+    }
+  };
+  xhttp.open("GET", "f.html", true);
+  xhttp.send();
+}
+</script>
+
+</div>
+</center>
+</body>
+</html>
